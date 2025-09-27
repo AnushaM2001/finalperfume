@@ -8,7 +8,7 @@
 
 .footer-container {
      background-color: #F7E7E8;
-        background-image: url("{% static 'images2/image.png' %}");
+        background-image: url("../images2/image.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size:contain;
