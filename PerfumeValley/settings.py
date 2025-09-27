@@ -16,7 +16,7 @@ from pathlib import Path
 SHIPROCKET_EMAIL="anu525495@gmail.com"
 SHIPROCKET_PASSWORD="tiYTExSq1C9o$EJ@"
 # Celery Settings
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://redis:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_IMPORTS = ('admin_panel.tasks', 'user_panel.tasks')
@@ -116,7 +116,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],  # Redis container name
+            "hosts": [("redis", 6379)],  # Redis container name
         },
     },
 }
@@ -125,12 +125,12 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Use PostgreSQL backend
@@ -219,15 +219,6 @@ RAZORPAY_SECRET='aA5yciXqziLqd5OdPd0MyOHZ'
 
 # settings.py
 APPEND_SLASH = False
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'mail.dreamdevtechs.com'  
-# EMAIL_PORT = 465  
-# EMAIL_USE_TLS = False  
-# EMAIL_USE_SSL = True  
-# EMAIL_HOST_USER = 'tripvthme@dreamdevtechs.com' 
-# EMAIL_HOST_PASSWORD = 'hhyo kfth syst muyn' 
-# DEFAULT_FROM_EMAIL = 'tripvthme@dreamdevtechs.com'  
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.hostinger.com"
 EMAIL_PORT = 587   # use 465 if you want SSL
@@ -239,8 +230,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 
-
 # Redis Settings
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = 'redis'
 REDIS_PORT = 6379
 REDIS_DB = 0
