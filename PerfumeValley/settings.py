@@ -219,13 +219,13 @@ RAZORPAY_SECRET='aA5yciXqziLqd5OdPd0MyOHZ'
 
 # settings.py
 APPEND_SLASH = False
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.hostinger.com"
-EMAIL_PORT = 587   # use 465 if you want SSL
-EMAIL_USE_TLS = True   # set False if using SSL
-EMAIL_USE_SSL = False  # set True if port = 465
-EMAIL_HOST_USER = "contact@perfumevalleyworld.com"  # your email
-EMAIL_HOST_PASSWORD = "PVcustomer01@"         # password
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'perfumevalleyworld5@gmail.com'
+EMAIL_HOST_PASSWORD = 'lnkxzddnqycdkjxw'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
